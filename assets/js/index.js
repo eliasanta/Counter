@@ -1,12 +1,32 @@
-const counter = document.querySelector('h2.counter')
-const increaseBtn = document.querySelector('button.increase')
-const decreaseBtn = document.querySelector('button.decrease')
-const colourBtns = document.querySelectorAll('div.colour-btns>button')
+//get input with differente way 
+const counter = document.getElementsByClassName('counter')[0];
+const colourBtns = document.querySelectorAll('div.colour-btns>button');
+const element = document.querySelector('.counter-obj');
+const write=document.querySelector('.back');
+//functions
+const increase = () => counter.innerText++;
+const decrease = () => counter.innerText--;
+const setColour = (event) => (counter.style.color = event.target.style.backgroundColor);
 
-const increase = () => counter.innerText++
-const decrease = () => counter.innerText--
-const setColour = e => (counter.style.color = e.target.style.backgroundColor)
+function resetCounter() {
+    counter.innerHTML = 0;
+    
+}
 
-increaseBtn.addEventListener('click', increase)
-decreaseBtn.addEventListener('click', decrease)
-colourBtns.forEach(btn => btn.addEventListener('click', setColour))
+colourBtns.forEach(btn => btn.addEventListener('click', setColour));
+
+function removeCounter(){
+element.classList.add('animate__animated', 'animate__bounceOutLeft');
+write.style.visibility = "visible";
+
+
+}
+function blink_one() {
+    document.getElementById('blink').style.visibility='visible';
+    setTimeout('blink_two()',700);
+    }
+function blink_two() {
+    document.getElementById('blink').style.visibility='hidden';
+    setTimeout('blink_one()',700);
+    }
+ blink_one();

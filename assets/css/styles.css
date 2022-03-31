@@ -1,35 +1,74 @@
+*{
+  font-family: 'Palette Mosaic', cursive;
+}
 body {
-  background-color: rgb(247, 234, 234);
-  color: white;
+  background-color: rgb(255, 251, 251);
+  color: rgb(7, 7, 7);
   text-align: center;
   font-family: sans-serif;
   font-size: 1.5rem;
+  background-image: url(https://media.gettyimages.com/vectors/jumping-sheep-vector-id165526963?s=2048x2048g);
+  background-size: contain;
 }
+
 .counter-obj{
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 500px;
-  height: 350px;
-  margin: 0 auto;
-  background-color: rgb(102, 91, 78);
+  height: 310px;
+  margin: 50px auto;
+  background-color: rgb(141, 188, 250);
   border-radius: 5px;
-
+}
+.counter{
+  color:white;
 }
 
-.increase,
-.decrease {
-  
+.increase{
+  position: absolute;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  margin: 0.5rem 0.2rem;
   border-radius: 5px;
+  top: 0px;
+  right: 0px;
+}
+.decrease {
+  position: absolute;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  top: 0px;
+  left: 0px;
 }
 
-div.colour-btns button {
+div.colour-btns button { /* change color buttons */
   height: 4rem;
   width: 4rem;
   border-radius: 2rem;
   outline: none;
   margin: 0.5rem;
+  
 }
+div.colour-btns button:hover{
+  transform: scale(1.05);
+} 
+.buttonCounter{ /* counter buttons */
+
+  background-image: url(https://www.kindpng.com/picc/m/2-24054_sheep-clip-art-sheep-vector-png-transparent-png.png://www.clipartkey.com/mpngs/m/6-60167_group-of-sheep-clipart-amp-group-of-sheep.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.back{
+  visibility: hidden;
+  position: fixed;
+  margin:5% 40%;
+  z-index: 0;
+}
+
+.back img{
+  width: 200px;
+}
+
